@@ -11,4 +11,4 @@
 ## Ragdoll Hit
 ## Ragdoll Archers
 ## Amazing Strange Rope Police (NEW!)
-## Getting over it (NEW!)
+## Getting over it (New, but broken, may be removed in the future if a fix is not found)
