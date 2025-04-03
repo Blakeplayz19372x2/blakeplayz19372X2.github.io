@@ -3,33 +3,81 @@
     <title>See our catalog</title>
     <style>
       body {
-    background-color: lightblue;
+    background-color: gray;
     font-family: monospace;
 }
-      a {
-    display: inline-block;
-    font-size: 12px;
-    border: 1.5px solid gray;
-    border-radius: 4px;
-    text-decoration: none;
+h1 {
+    text-align: center;
+    color:gold;
+    margin-top: 25px;
+    
 }
+
+body {
+    margin: 0; /* Removes default browser margins */
+    padding: 0; /* Removes any default padding */
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows blocks to wrap to the next row if space is limited */
+    gap: 5px; /* 5px space between the blocks */
+    justify-content: center; /* Centers the blocks horizontally */
+    margin-top: 50px; /* Adds space between the title and the blocks */
+    padding: 0 10px; /* Adds padding to prevent blocks from hitting the screen edges */
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 2px solid gold; /* Dark blue border */
+    background-color: black; /* Normal blue background */
+    border-radius: 15px; /* Adds rounded edges */
+    color: gold; /* Black text color */
+    font-size: 1.2rem; /* Slightly larger font size */
+    box-sizing: border-box; /* Ensures padding doesn't affect dimensions */
+    overflow: hidden; /* Keeps content inside the box */
+}
+
+a img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover; /* Keeps image proportionate while resizing */
+}
+
+a span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 25px; /* Restricts text space */
+}
+
     </style>
   </head>
   <body>
     <h1>Our Games</h1>
-    <p><a href="nitroracing.html">Nitro Racing.</a> A great racing game!</p>
-    <p><a href="towerdefense.html">Tower Defense.</a> Defend the base from waves of enemies in up to 3 different games modes!</p>
-    <p><a href="appel.html">Appel Platformer.</a> A great platformer!</p>
-    <p><a href="terminus.html">Terminus.</a> A really great space shooter game!</p>
-    <p><a href="windows.html">Windows Emulator.</a> A realistic emulator for Windows!</p>
-    <p><a href="15.html">15%.</a> A game where you slice stuff off a square to get to 15%!</p>
-    <p><a href="ragdollhit/index.html">Ragdoll Hit.</a>A ragdoll fighting game.</p>
-    <p><a href="ragdollarchers/index.html">Ragdoll Archers.</a>A ragdoll archery fighting game.</p>
-    <p><a href="retrobowl/index.html">Retro Bowl.</a>Lead your football team to victory!</p>
-    <p><a href="geometrydash/index.html">Geometry Dash.</a></P>
-    <p><a href="ropepolice/index.html">Amazing Strange Rope Police</a>YES, YOU HEARD ME. ROPE POLICE IS HERE!</p>
-    <p><a href="gettingoverit/index.html">Getting over it.</a>A game where you use a hammer to manuever your character.(Broken, might be removed soon)</p>
-    <p><a href="yohohoio/index.html">Yohoho.io.</a>Fight other pirates to get gold!(NEW!)</p>
-    <p><a href="shellshockers/index.html">Shell Shockers.</a>(NEW!)</p>
+    <div class="container">
+    <span><a href="nitroracing.html">Nitro Racing</a></span> 
+    <span><a href="towerdefense.html">Tower Defense</a></span>
+    <span><a href="appel.html">Appel Platformer</a></span>
+    <span><a href="terminus.html">Terminus</a></span> 
+    <span><a href="windows.html">Windows Emulator</a></span> 
+    <span><a href="15.html">15%</a></span>
+    <span><a href="ragdollhit/index.html">Ragdoll Hit</a></span>
+    <span><a href="ragdollarchers/index.html">Ragdoll Archers</a></span>
+    <span><a href="retrobowl/index.html">Retro Bowl</a></span>
+    <span><a href="geometrydash/index.html">Geometry Dash</a></span>
+    <span><a href="ropepolice/index.html">Amazing Strange Rope Police</a></span>
+    <span><a href="gettingoverit/index.html">Getting over it</a></span>
+    <span><a href="yohohoio/index.html">Yohoho.io</a></span>
+    <span><a href="shellshockers/index.html">Shell Shockers</a></span>
+    </div>
   </body>
 </html>
