@@ -3,80 +3,116 @@
     <title>See our catalog</title>
     <style>
       body {
-    background-color: gray;
-    font-family: monospace;
-}
-h1 {
-    text-align: center;
-    color:gold;
-    margin-top: 25px;
-    
-}
+        background-color: gray;
+        font-family: monospace;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-body {
-    margin: 0; /* Removes default browser margins */
-    padding: 0; /* Removes any default padding */
-    box-sizing: border-box;
-}
+      h1 {
+        text-align: center;
+        color: white;
+        margin-top: 25px;
+        text-shadow: 0 0 5px gold, 0 0 10px orange, 0 0 20px yellow;
+        animation: glow 3s ease-in-out infinite alternate;
+      }
 
-.container {
-    display: flex;
-    flex-wrap: wrap; /* Allows blocks to wrap to the next row if space is limited */
-    gap: 5px; /* 5px space between the blocks */
-    justify-content: center; /* Centers the blocks horizontally */
-    margin-top: 50px; /* Adds space between the title and the blocks */
-    padding: 0 10px; /* Adds padding to prevent blocks from hitting the screen edges */
-}
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+        margin-top: 50px;
+        padding: 0 10px;
+      }
 
-a {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    border: 2px solid gold; /* Dark blue border */
-    background-color: black; /* Normal blue background */
-    border-radius: 15px; /* Adds rounded edges */
-    color: gold; /* Black text color */
-    font-size: 1.2rem; /* Slightly larger font size */
-    box-sizing: border-box; /* Ensures padding doesn't affect dimensions */
-    overflow: hidden; /* Keeps content inside the box */
-}
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        border: 2px solid gold;
+        background-color: black;
+        border-radius: 15px;
+        color: white;
+        font-size: 1.2rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+        box-shadow: 0 0 10px gold;
+        text-shadow: 0 0 5px gold, 0 0 10px orange, 0 0 15px yellow;
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+        animation: glow 3s ease-in-out infinite alternate;
+      }
 
-a img {
-    width: 75px;
-    height: 75px;
-    object-fit: cover; /* Keeps image proportionate while resizing */
-}
+      a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background-color: gold;
+        opacity: 0.15;
+        filter: blur(10px);
+        z-index: -1;
+        transition: opacity 0.3s;
+      }
 
-a span {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    max-height: 25px; /* Restricts text space */
-}
+      a:hover {
+        transform: scale(1.05);
+      }
 
+      a:hover::before {
+        opacity: 0.35;
+      }
+
+      a img {
+        width: 75px;
+        height: 75px;
+        object-fit: cover;
+      }
+
+      a span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        max-height: 25px;
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 5px gold, 0 0 10px orange, 0 0 15px yellow;
+          box-shadow: 0 0 10px gold;
+        }
+        100% {
+          text-shadow: 0 0 10px gold, 0 0 20px orange, 0 0 30px yellow;
+          box-shadow: 0 0 20px gold;
+        }
+      }
     </style>
   </head>
   <body>
     <h1>Our Games</h1>
     <div class="container">
-    <span><a href="nitroracing.html">Nitro Racing</a></span> 
-    <span><a href="towerdefense.html">Tower Defense</a></span>
-    <span><a href="appel.html">Appel Platformer</a></span>
-    <span><a href="terminus.html">Terminus</a></span> 
-    <span><a href="windows.html">Windows Emulator</a></span> 
-    <span><a href="15.html">15%</a></span>
-    <span><a href="ragdollhit/index.html">Ragdoll Hit</a></span>
-    <span><a href="ragdollarchers/index.html">Ragdoll Archers</a></span>
-    <span><a href="retrobowl/index.html">Retro Bowl</a></span>
-    <span><a href="geometrydash/index.html">Geometry Dash</a></span>
-    <span><a href="ropepolice/index.html">Amazing Strange Rope Police</a></span>
-    <span><a href="yohohoio/index.html">Yohoho.io</a></span>
-    <span><a href="finalearth2/index.html">The Final Earth 2</a></span>
+      <span><a href="nitroracing.html">Nitro Racing</a></span> 
+      <span><a href="towerdefense.html">Tower Defense</a></span>
+      <span><a href="appel.html">Appel Platformer</a></span>
+      <span><a href="terminus.html">Terminus</a></span> 
+      <span><a href="windows.html">Windows Emulator</a></span> 
+      <span><a href="15.html">15%</a></span>
+      <span><a href="ragdollhit/index.html">Ragdoll Hit</a></span>
+      <span><a href="ragdollarchers/index.html">Ragdoll Archers</a></span>
+      <span><a href="retrobowl/index.html">Retro Bowl</a></span>
+      <span><a href="geometrydash/index.html">Geometry Dash</a></span>
+      <span><a href="ropepolice/index.html">Amazing Strange Rope Police</a></span>
+      <span><a href="yohohoio/index.html">Yohoho.io</a></span>
+      <span><a href="finalearth2/index.html">The Final Earth 2</a></span>
     </div>
   </body>
 </html>
