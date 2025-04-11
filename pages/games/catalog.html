@@ -2,6 +2,29 @@
   <head>
     <title>See our catalog</title>
     <style>
+      .new {
+    animation: rainbow-glow 3s infinite alternate;
+    text-shadow: 0 0 5px red, 0 0 10px orange, 0 0 15px yellow, 0 0 20px green, 0 0 25px blue, 0 0 30px indigo, 0 0 35px violet;
+    box-shadow: 0 0 10px red, 0 0 15px orange, 0 0 20px yellow, 0 0 25px green, 0 0 30px blue, 0 0 35px indigo, 0 0 40px violet;
+}
+
+.new * { /* Targets all child elements inside .new */
+    text-shadow: 0 0 5px red, 0 0 10px orange, 0 0 15px yellow, 0 0 20px green, 0 0 25px blue, 0 0 30px indigo, 0 0 35px violet;
+    animation: rainbow-glow 3s infinite alternate;
+    box-shadow: none; /* Prevents conflicting styles */
+}
+
+@keyframes rainbow-glow {
+    0% {
+        text-shadow: 0 0 5px red, 0 0 10px orange, 0 0 15px yellow, 0 0 20px green, 0 0 25px blue, 0 0 30px indigo, 0 0 35px violet;
+        box-shadow: 0 0 10px red, 0 0 15px orange, 0 0 20px yellow, 0 0 25px green, 0 0 30px blue, 0 0 35px indigo, 0 0 40px violet;
+    }
+    100% {
+        text-shadow: 0 0 10px violet, 0 0 15px indigo, 0 0 20px blue, 0 0 25px green, 0 0 30px yellow, 0 0 35px orange, 0 0 40px red;
+        box-shadow: 0 0 20px violet, 0 0 25px indigo, 0 0 30px blue, 0 0 35px green, 0 0 40px yellow, 0 0 45px orange, 0 0 50px red;
+    }
+}
+
       body {
         background-color: gray;
         font-family: monospace;
@@ -113,7 +136,10 @@
     <span><a href="retrobowl/index.html">Retro Bowl</a></span>
     <span><a href="geometrydash/index.html">Geometry Dash</a></span>
     <span><a href="finalearth2/index.html">The Final Earth 2</a></span>
-    <span><a href="bitlife/index.html">Bitlife</a></span>
+    <div class="new">
+    <span><a href="bitlife/index.html">Bitlife (New!)</a></span>
+    <span><a href="neverendinglegacy/game/index.html">Neverending Legacy (New!)</a></span>
+    </div>
     </div>
   </body>
 </html>
