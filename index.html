@@ -4,6 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restricted Webpage</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #555;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            color: #777;
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1em;
+        }
+
+        input[type="password"] {
+            display: block;
+            margin: 10px auto 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
     <script>
         async function hashPassword(password) {
             const encoder = new TextEncoder();
@@ -15,7 +76,7 @@
 
         async function checkPassword() {
             const inputPassword = document.getElementById('password').value;
-            const correctHash = "5be1715e14d776fba11a456c7a352a3e1a364e58c34d10cc1fef00119f015bcb"; 
+            const correctHash = "b0369df18827b6423a6e11d679848c9138ccc77c7bcf7e0617b18fb50265db73"; // Hash of "superiorpassword"
 
             const inputHash = await hashPassword(inputPassword);
 
@@ -24,19 +85,20 @@
             } else {
                 alert("INCORRECT PASSWORD >:)");
                 setTimeout(() => {}, 2250);
-                window.location.href = "about:blank"
+                window.location.href = "about:blank";
             }
         }
     </script>
 </head>
 <body>
-    <h1>Enter Password</h1>
-    <h2>Blakeplayz19372.github.io has been restricted due to overuse. Please enter the access keys.</h2>
-    <form onsubmit="event.preventDefault(); checkPassword();">
-        <label for="password">Enter Password:</label>
-        <input type="password" id="password" required>
-        <button type="submit">Scan</button>
-    </form>
+    <div>
+        <h1>Enter Password</h1>
+        <h2>Blakeplayz19372.github.io has been restricted due to overuse. Please enter the access keys.</h2>
+        <form onsubmit="event.preventDefault(); checkPassword();">
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" required>
+            <button type="submit">Scan</button>
+        </form>
+    </div>
 </body>
 </html>
-
