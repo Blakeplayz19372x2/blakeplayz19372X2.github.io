@@ -1,11 +1,42 @@
-<html>
-  <head>
-    <title>404 Not Found</title>
-    <link type="text/css" rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>Welcome to Blakeplayz19372.github.io</h1>
-    <p>Visit <a href="pages/aboutme.html">this page</a> to learn more about me</p>
-    <p>Visit this page to see our <a href="pages/games/catalog.html">collection of games</a></p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restricted Webpage</title>
+    <script>
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function checkPassword() {
+            const inputPassword = document.getElementById('password').value;
+            const correctHash = "5be1715e14d776fba11a456c7a352a3e1a364e58c34d10cc1fef00119f015bcb"; 
+
+            const inputHash = await hashPassword(inputPassword);
+
+            if (inputHash === correctHash) {
+                window.location.href = "pages/games/catalog.html";
+            } else {
+                alert("INCORRECT PASSWORD >:)");
+                setTimeout(() => {}, 2250);
+                window.location.href = "about:blank"
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter Password</h1>
+    <h2>Blakeplayz19372.github.io has been restricted due to overuse. Please enter the access keys.</h2>
+    <form onsubmit="event.preventDefault(); checkPassword();">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Scan</button>
+    </form>
+</body>
 </html>
+
