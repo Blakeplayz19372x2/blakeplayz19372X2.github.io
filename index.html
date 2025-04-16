@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restricted Webpage</title>
     <style>
+        /* Centered layout with responsive design */
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -12,47 +13,44 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f7f7f7;
+            background-color: #f0f0f5;
             color: #333;
         }
 
-        h1 {
-            font-size: 2em;
-            color: #555;
-        }
-
-        h2 {
-            font-size: 1.2em;
-            color: #777;
-            text-align: center;
-        }
-
-        form {
+        .container {
             text-align: center;
             background: #ffffff;
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 20px;
+            max-width: 350px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        label {
-            font-size: 1em;
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #666;
         }
 
         input[type="password"] {
-            display: block;
-            margin: 10px auto 20px;
+            width: 100%;
             padding: 10px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 100%;
-            max-width: 300px;
             font-size: 1em;
         }
 
         button {
-            padding: 10px 20px;
+            width: 100%;
+            padding: 10px;
             border: none;
             border-radius: 5px;
             background-color: #4caf50;
@@ -67,37 +65,50 @@
     </style>
     <script>
         async function hashPassword(password) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(password);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+            try {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+            } catch (error) {
+                console.error("Error hashing password:", error);
+                return null; // Return null on error
+            }
         }
 
         async function checkPassword() {
-            const inputPassword = document.getElementById('password').value;
+            const inputPassword = document.getElementById('password').value.trim(); // Remove spaces
             const correctHash = "abfd90be484738d755819ad1b97e50aa93d5bcd83c18df0e00462339ef2d7bbb"; // Hash of "testpassword"
 
-            const inputHash = await hashPassword(inputPassword);
+            if (!inputPassword) {
+                alert("Password cannot be empty.");
+                return;
+            }
 
-            if (inputHash === correctHash) {
-                window.location.href = "pages/games/catalog.html";
-            } else {
-                alert("INCORRECT PASSWORD >:)");
-                setTimeout(() => {}, 2250);
-                window.location.href = "about:blank";
+            try {
+                const inputHash = await hashPassword(inputPassword);
+
+                if (inputHash === correctHash) {
+                    alert("Access granted!");
+                    window.location.href = "pages/games/catalog.html";
+                } else {
+                    alert("Incorrect Password. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error during password check:", error);
+                alert("An error occurred. Please try again later.");
             }
         }
     </script>
 </head>
 <body>
-    <div>
-        <h1>Enter Password</h1>
-        <h2>Blakeplayz19372.github.io has been restricted due to overuse. Please enter the access keys.</h2>
+    <div class="container">
+        <h1>Access Restricted</h1>
+        <h2>Please enter the access keys to proceed.</h2>
         <form onsubmit="event.preventDefault(); checkPassword();">
-            <label for="password">Enter Password:</label>
-            <input type="password" id="password" required>
-            <button type="submit">Scan</button>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Submit</button>
         </form>
     </div>
 </body>
