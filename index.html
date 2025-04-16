@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restricted Webpage</title>
     <style>
-        /* Centered layout with responsive design */
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -64,40 +63,35 @@
         }
     </style>
     <script>
-        async function hashPassword(password) {
-            try {
-                const encoder = new TextEncoder();
-                const data = encoder.encode(password);
-                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-                const hashArray = Array.from(new Uint8Array(hashBuffer));
-                return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-            } catch (error) {
-                console.error("Error hashing password:", error);
-                return null; // Return null on error
+        function xorEncryptDecrypt(input, key) {
+            let output = '';
+            for (let i = 0; i < input.length; i++) {
+                output += String.fromCharCode(
+                    input.charCodeAt(i) ^ key.charCodeAt(i % key.length)
+                );
             }
+            return output;
         }
 
-        async function checkPassword() {
-            const inputPassword = document.getElementById('password').value.trim(); // Remove spaces
-            const correctHash = "abfd90be484738d755819ad1b97e50aa93d5bcd83c18df0e00462339ef2d7bbb"; // Hash of "testpassword"
+        function checkPassword() {
+            const inputPassword = document.getElementById('password').value.trim();
 
             if (!inputPassword) {
                 alert("Password cannot be empty.");
                 return;
             }
 
-            try {
-                const inputHash = await hashPassword(inputPassword);
+            // XOR-encrypted version of "testpassword" using key "mykey"
+            const encryptedPassword = "\u0018\u0010\u0007\u001f7\u0016\u0006\u0017\u0017\u001c\b";
+            const key = "mykey";
 
-                if (inputHash === correctHash) {
-                    alert("Access granted!");
-                    window.location.href = "pages/games/catalog.html";
-                } else {
-                    alert("Incorrect Password. Please try again.");
-                }
-            } catch (error) {
-                console.error("Error during password check:", error);
-                alert("An error occurred. Please try again later.");
+            const decryptedPassword = xorEncryptDecrypt(encryptedPassword, key);
+
+            if (inputPassword === decryptedPassword) {
+                alert("Access granted!");
+                window.location.href = "pages/games/catalog.html";
+            } else {
+                alert("Incorrect Password. Please try again.");
             }
         }
     </script>
@@ -105,7 +99,7 @@
 <body>
     <div class="container">
         <h1>Access Restricted</h1>
-        <h2>Please enter the access keys to proceed.</h2>
+        <h2>Please enter the access key to proceed.</h2>
         <form onsubmit="event.preventDefault(); checkPassword();">
             <input type="password" id="password" placeholder="Enter Password" required>
             <button type="submit">Submit</button>
