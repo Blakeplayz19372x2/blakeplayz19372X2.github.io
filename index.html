@@ -25,42 +25,6 @@
       max-width: 350px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #444;
-    }
-
-    h2 {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-      color: #666;
-    }
-
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #4caf50;
-      color: white;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
   </style>
   <script>
     let actualPassword = '';
@@ -78,10 +42,31 @@
       return str.split('').reverse().join('');
     }
 
+    function setCookie(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+    }
+
+    function getCookie(name) {
+      const cookies = document.cookie.split('; ');
+      for (let cookie of cookies) {
+        let [key, value] = cookie.split('=');
+        if (key === name) return value;
+      }
+      return null;
+    }
+
     function setupPassword() {
       actualPassword = generateRandomKey();
       const reversedFake = reverseString(actualPassword);
       console.log(`🔑 Password: ${reversedFake}`);
+
+      // Check if user is already logged in
+      if (getCookie("loggedIn") === "true") {
+        alert("Welcome back! You are automatically logged in.");
+        window.location.href = "pages/games/catalog.html";
+      }
     }
 
     function checkPassword() {
@@ -93,10 +78,11 @@
       }
 
       if (inputPassword === actualPassword) {
+        setCookie("loggedIn", "true", 1); // Store login cookie for 24 hours
         alert("Access granted!");
         window.location.href = "pages/games/catalog.html";
       } else {
-        alert("Incorrect Password. Hint: Look at the passkey in the console and reverse it! e.g. 123 -> 321");
+        alert("Incorrect Password. Hint: Look at the passkey in the console and reverse it!");
       }
     }
 
