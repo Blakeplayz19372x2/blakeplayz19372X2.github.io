@@ -3,45 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Restricted Webpage</title>
+  <title>Historical Archives</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #f0f0f5;
+      font-family: 'Times New Roman', serif;
+      background-color: #f5f5f5;
       color: #333;
+      padding: 20px;
+      text-align: center;
     }
 
     .container {
-      text-align: center;
+      max-width: 800px;
+      margin: auto;
       background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 10px;
       padding: 20px;
-      max-width: 350px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #444;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 10px;
+      font-size: 1em;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 1em;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
     }
   </style>
   <script>
-    let actualPassword = '';
-
-    function generateRandomKey(length = 16) {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      let result = '';
-      for (let i = 0; i < length; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      return result;
-    }
-
-    function reverseString(str) {
-      return str.split('').reverse().join('');
-    }
-
     function setCookie(name, value, days) {
       const date = new Date();
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -57,46 +69,39 @@
       return null;
     }
 
-    function setupPassword() {
-      actualPassword = generateRandomKey();
-      const reversedFake = reverseString(actualPassword);
-      console.log(`🔑 Password: ${reversedFake}`);
-
-      // Check if user is already logged in
+    function setupLogin() {
       if (getCookie("loggedIn") === "true") {
         alert("Welcome back! You are automatically logged in.");
         window.location.href = "pages/games/catalog.html";
       }
     }
 
-    function checkPassword() {
-      const inputPassword = document.getElementById('password').value.trim();
-
-      if (!inputPassword) {
-        alert("Password cannot be empty.");
-        return;
-      }
-
-      if (inputPassword === actualPassword) {
+    function checkAccess() {
+      const input = document.getElementById("access").value.trim().toLowerCase();
+      if (input === "i want games") { 
         setCookie("loggedIn", "true", 1); // Store login cookie for 24 hours
-        alert("Access granted!");
         window.location.href = "pages/games/catalog.html";
-      } else {
-        alert("Incorrect Password. Hint: Look at the passkey in the console and reverse it!");
       }
     }
 
-    window.onload = setupPassword;
+    window.onload = setupLogin;
   </script>
 </head>
 <body>
   <div class="container">
-    <h1>Access Restricted</h1>
-    <h2>Please enter the access key to proceed.</h2>
-    <form onsubmit="event.preventDefault(); checkPassword();">
-      <input type="password" id="password" placeholder="Enter Password" required />
-      <button type="submit">Submit</button>
-    </form>
+    <h1>Historical Archives Database</h1>
+    <p>Welcome to the Historical Archives Database, where you can explore records from ancient civilizations, medieval kingdoms, and modern historical developments.</p>
+    
+    <p>Use the search bar below to browse documents:</p>
+    <input type="text" id="access" placeholder="Search historical records..." onkeyup="checkAccess()"/>
+
+    <p><strong>Featured Topics:</strong></p>
+    <ul>
+      <li>The Economic Impact of the Industrial Revolution</li>
+      <li>Ancient Egyptian Agricultural Practices</li>
+      <li>The Development of Feudalism in Medieval Europe</li>
+      <li>World War II: Tactical Strategies and Outcomes</li>
+    </ul>
   </div>
 </body>
 </html>
