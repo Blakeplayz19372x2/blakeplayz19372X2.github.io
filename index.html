@@ -27,30 +27,11 @@
       color: #444;
     }
 
-    p {
-      text-align: justify;
-      line-height: 1.6;
-    }
-
     input {
       width: 100%;
       padding: 8px;
       margin-top: 10px;
       font-size: 1em;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 10px;
-      font-size: 1em;
-      background-color: #4caf50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
     }
   </style>
   <script>
@@ -76,32 +57,28 @@
       }
     }
 
-    function checkAccess() {
-      const input = document.getElementById("access").value.trim().toLowerCase();
-      if (input === "i want games") { 
-        setCookie("loggedIn", "true", 1); // Store login cookie for 24 hours
-        window.location.href = "pages/games/catalog.html";
+    function checkAccess(event) {
+      // Check if Enter is pressed and input is focused
+      if (event.key === "Enter" && document.activeElement.id === "access") {
+        const input = document.getElementById("access").value.trim().toLowerCase();
+        if (input === "i want games") {
+          setCookie("loggedIn", "true", 1); // Store login cookie for 24 hours
+          window.location.href = "pages/games/catalog.html";
+        } else {
+          // Redirect to fake search results page for invalid queries
+          window.location.href = "search-results.html?query=" + encodeURIComponent(input);
+        }
       }
     }
 
     window.onload = setupLogin;
   </script>
 </head>
-<body>
+<body onkeypress="checkAccess(event)">
   <div class="container">
     <h1>Historical Archives Database</h1>
-    <p>Welcome to the Historical Archives Database, where you can explore records from ancient civilizations, medieval kingdoms, and modern historical developments.</p>
-    
-    <p>Use the search bar below to browse documents:</p>
-    <input type="text" id="access" placeholder="Search historical records..." onkeyup="checkAccess()"/>
-
-    <p><strong>Featured Topics:</strong></p>
-    <ul>
-      <li>The Economic Impact of the Industrial Revolution</li>
-      <li>Ancient Egyptian Agricultural Practices</li>
-      <li>The Development of Feudalism in Medieval Europe</li>
-      <li>World War II: Tactical Strategies and Outcomes</li>
-    </ul>
+    <p>Welcome to the Historical Archives Database. Use the search bar below to browse records:</p>
+    <input type="text" id="access" placeholder="Search historical records..."/>
   </div>
 </body>
 </html>
