@@ -1,5 +1,5 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-import { PointerLockControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/PointerLockControls.js';
+import * as THREE from 'three';
+import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls.js';
 
 let camera, scene, renderer, controls;
 let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
