@@ -1,23 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Three.js Sandbox</title>
-  <style>
-    body { margin: 0; overflow: hidden; }
-    canvas { display: block; }
-  </style>
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-        "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-      }
-    }
-  </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3D Sandbox Game</title>
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #a0a0a0;
+    font-family: Arial, sans-serif;
+  }
+  #crosshair {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  #crosshair:before, #crosshair:after {
+    content: '';
+    position: absolute;
+    background: black;
+  }
+  #crosshair:before {
+    left: 9px;
+    top: 0;
+    width: 2px;
+    height: 20px;
+  }
+  #crosshair:after {
+    top: 9px;
+    left: 0;
+    width: 20px;
+    height: 2px;
+  }
+  #instructions {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #222;
+    font-weight: bold;
+    user-select: none;
+    z-index: 10;
+  }
+</style>
 </head>
 <body>
-  <script type="module" src="sandbox.js"></script>
+<div id="crosshair"></div>
+<div id="instructions">
+  Click to lock pointer. WASD to move, Space to jump. E to pick/place block. Q to throw block. R to spawn new block.
+</div>
+<script type="module" src="./sandbox.js"></script>
 </body>
 </html>
