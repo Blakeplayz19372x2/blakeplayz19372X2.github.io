@@ -8,4 +8,4 @@
 
 ### Credits to The_Mystic_Lynx for Cell Machine Mystic Mod source code
 
-https://github.com/The_Mystic_Lynx/Cell_Machine_Mystic_Mod
+https://github.com/TheMysticLynx/Cell-Machine-Mystic-Mod
