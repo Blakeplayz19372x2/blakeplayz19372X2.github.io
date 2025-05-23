@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Historical Archives</title>
   <style>
@@ -12,7 +12,6 @@
       padding: 20px;
       text-align: center;
     }
-
     .container {
       max-width: 800px;
       margin: auto;
@@ -21,12 +20,10 @@
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
-
     h1 {
       font-size: 2em;
       color: #444;
     }
-
     input {
       width: 100%;
       padding: 8px;
@@ -58,14 +55,14 @@
     }
 
     function checkAccess(event) {
-      // Check if Enter is pressed and input is focused
       if (event.key === "Enter" && document.activeElement.id === "access") {
         const input = document.getElementById("access").value.trim().toLowerCase();
-        if (input === "i want games") {
-          setCookie("loggedIn", "true", 1); // Store login cookie for 24 hours
+        const encodedPass = "aSB3YW50IGdhbWVz"; // base64 for "i want games"
+        const decodedPass = atob(encodedPass);
+        if (input === decodedPass) {
+          setCookie("loggedIn", "true", 1);
           window.location.href = "pages/games/catalog.html";
         } else {
-          // Redirect to fake search results page for invalid queries
           window.location.href = "pages/search-results.html?query=" + encodeURIComponent(input);
         }
       }
