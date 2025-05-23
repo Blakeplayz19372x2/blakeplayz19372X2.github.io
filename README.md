@@ -5,3 +5,7 @@
 ## Every time this is blocked by my school district, it moves to the next iteration (right now it's x2, then x3, x4, and so on.)
 
 ## If you want me to add a game, simply submit a issue with the name and description of the game(s) you want to add
+
+### Credits to The_Mystic_Lynx for Cell Machine Mystic Mod source code
+
+https://github.com/The_Mystic_Lynx/Cell_Machine_Mystic_Mod
