@@ -2,37 +2,6 @@
   <head>
     <title>See our catalog</title>
     <style>
-      .new {
-    animation: rainbow-glow 3s infinite alternate;
-    text-shadow: 0 0 5px red, 0 0 10px orange, 0 0 15px yellow, 0 0 20px green, 0 0 25px blue, 0 0 30px indigo, 0 0 35px violet;
-    box-shadow: 0 0 10px red, 0 0 15px orange, 0 0 20px yellow, 0 0 25px green, 0 0 30px blue, 0 0 35px indigo, 0 0 40px violet;
-}
-
-.new * { /* Targets all child elements inside .new */
-    text-shadow: 0 0 5px red, 0 0 10px orange, 0 0 15px yellow, 0 0 20px green, 0 0 25px blue, 0 0 30px indigo, 0 0 35px violet;
-    animation: rainbow-glow 3s infinite alternate;
-    box-shadow: none; /* Prevents conflicting styles */
-}
-.new {
-    display: flex; /* Enables horizontal alignment */
-    flex-wrap: wrap; /* Allows elements to move to a new row if needed */
-    gap: 5px; /* Adds spacing between elements */
-    justify-content: center; /* Centers the items horizontally */
-    align-items: center; /* Aligns items vertically */
-}
-
-
-@keyframes rainbow-glow {
-    0% {
-        text-shadow: 0 0 5px red, 0 0 10px orange, 0 0 15px yellow, 0 0 20px green, 0 0 25px blue, 0 0 30px indigo, 0 0 35px violet;
-        box-shadow: 0 0 10px red, 0 0 15px orange, 0 0 20px yellow, 0 0 25px green, 0 0 30px blue, 0 0 35px indigo, 0 0 40px violet;
-    }
-    100% {
-        text-shadow: 0 0 10px violet, 0 0 15px indigo, 0 0 20px blue, 0 0 25px green, 0 0 30px yellow, 0 0 35px orange, 0 0 40px red;
-        box-shadow: 0 0 20px violet, 0 0 25px indigo, 0 0 30px blue, 0 0 35px green, 0 0 40px yellow, 0 0 45px orange, 0 0 50px red;
-    }
-}
-
       body {
         background-color: gray;
         font-family: monospace;
@@ -45,7 +14,7 @@
         text-align: center;
         color: white;
         margin-top: 25px;
-        text-shadow: 0 0 5px gold, 0 0 10px orange, 0 0 20px yellow;
+        text-shadow: 0 0 5px green, 0 0 10px lime, 0 0 20px green;
         animation: glow 3s ease-in-out infinite alternate;
       }
 
@@ -66,7 +35,7 @@
         width: 100px;
         height: 100px;
         text-align: center;
-        border: 2px solid gold;
+        border: 2px solid lime;
         background-color: black;
         border-radius: 15px;
         color: white;
@@ -75,8 +44,8 @@
         overflow: hidden;
         position: relative;
         z-index: 0;
-        box-shadow: 0 0 10px gold;
-        text-shadow: 0 0 5px gold, 0 0 10px orange, 0 0 15px yellow;
+        box-shadow: 0 0 10px lime;
+        text-shadow: 0 0 5px green, 0 0 10px lime, 0 0 15px green;
         transition: transform 0.3s ease, text-shadow 0.3s ease;
         animation: glow 3s ease-in-out infinite alternate;
       }
@@ -87,7 +56,7 @@
         width: 100%;
         height: 100%;
         border-radius: 15px;
-        background-color: gold;
+        background-color: greenyellow;
         opacity: 0.15;
         filter: blur(10px);
         z-index: -1;
@@ -95,7 +64,7 @@
       }
 
       a:hover {
-        transform: scale(1.25);
+        transform: scale(1.125);
       }
 
       a:hover::before {
@@ -118,12 +87,12 @@
 
       @keyframes glow {
         0% {
-          text-shadow: 0 0 5px gold, 0 0 10px orange, 0 0 15px yellow;
-          box-shadow: 0 0 10px gold;
+          text-shadow: 0 0 5px green, 0 0 10px lime, 0 0 15px green;
+          box-shadow: 0 0 10px lime;
         }
         100% {
-          text-shadow: 0 0 10px gold, 0 0 20px orange, 0 0 30px yellow;
-          box-shadow: 0 0 20px gold;
+          text-shadow: 0 0 10px green, 0 0 20px lime, 0 0 30px green;
+          box-shadow: 0 0 20px lime;
         }
       }
     </style>
@@ -131,24 +100,23 @@
   <body>
     <h1>Our Games</h1>
     <div class="container">
-    <span><a href="15.html">15%</a></span>
-    <span><a href="appel.html">Appel</a></span>
-    <span><a href="nitroracing.html">Nitro Racing</a></span>
-    <span><a href="terminus.html">Terminus</a></span>
-    <span><a href="towerdefense.html">Tower Defense</a></span>
-    <span><a href="windows.html">Windows Emulator</a></span>
-    <span><a href="ragdollhit/index.html">Ragdoll Hit</a></span>
-    <span><a href="ragdollarchers/index.html">Ragdoll Archers</a></span>
-    <span><a href="ropepolice/index.html">Amazing Strange Rope Police</a></span>
-    <span><a href="yohohoio/index.html">Yohoho.io</a></span>
-    <span><a href="retrobowl/index.html">Retro Bowl</a></span>
-    <span><a href="geometrydash/index.html">Geometry Dash</a></span>
-    <span><a href="finalearth2/index.html">The Final Earth 2</a></span>
-    <span><a href="bitlife/index.html">Bitlife</a></span>
-    <span><a href="neverendinglegacy/Game/index.html">Never Ending Legacy</a></span> <!-- Wanna add a game? Just submit a issue and i'll add that game or respond within five days. -->
-    <div class="new">
-    <span><a href="sandbox/sandbox.html">Experimental Sandbox</a></span>
-    </div>
+      <span><a href="15.html">15%</a></span>
+      <span><a href="appel.html">Appel</a></span>
+      <span><a href="nitroracing.html">Nitro Racing</a></span>
+      <span><a href="terminus.html">Terminus</a></span>
+      <span><a href="towerdefense.html">Tower Defense</a></span>
+      <span><a href="windows.html">Windows Emulator</a></span>
+      <span><a href="ragdollhit/index.html">Ragdoll Hit</a></span>
+      <span><a href="ragdollarchers/index.html">Ragdoll Archers</a></span>
+      <span><a href="ropepolice/index.html">Amazing Strange Rope Police</a></span>
+      <span><a href="yohohoio/index.html">Yohoho.io</a></span>
+      <span><a href="retrobowl/index.html">Retro Bowl</a></span>
+      <span><a href="geometrydash/index.html">Geometry Dash</a></span>
+      <span><a href="finalearth2/index.html">The Final Earth 2</a></span>
+      <span><a href="bitlife/index.html">Bitlife</a></span>
+      <span><a href="neverendinglegacy/Game/index.html">Never Ending Legacy</a></span>
+      <span><a href="sandbox/sandbox.html">Experiment Sandbox</a></span>
+      <span><a href="cellmachine/index.html">Cell Machine (New!)</a></span>
     </div>
   </body>
 </html>
