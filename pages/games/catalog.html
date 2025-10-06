@@ -1,9 +1,9 @@
 <html>
   <head>
-    <title>See our catalog</title>
+    <title>Terminus Games - Our Games</title>
     <style>
       body {
-        background-color: gray;
+        background-color: #111; /* dark background for neon */
         font-family: monospace;
         margin: 0;
         padding: 0;
@@ -12,43 +12,49 @@
 
       h1 {
         text-align: center;
-        color: white;
+        color: #00ff00;
         margin-top: 25px;
-        text-shadow: 0 0 5px green, 0 0 10px lime, 0 0 20px green;
+        text-shadow: 0 0 5px #00ff00, 0 0 15px #39ff14, 0 0 25px #00ff00;
+        animation: glow 3s ease-in-out infinite alternate;
+      }
+      h2 {
+        text-align: center;
+        color: #00ff00;
+        margin-top: 5px;
         animation: glow 3s ease-in-out infinite alternate;
       }
 
       .container {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 10px;
         justify-content: center;
         margin-top: 50px;
         padding: 0 10px;
       }
 
       a {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        width: 100px;
-        height: 100px;
-        text-align: center;
-        border: 2px solid lime;
-        background-color: black;
-        border-radius: 15px;
-        color: white;
-        font-size: 1.2rem;
-        box-sizing: border-box;
-        overflow: hidden;
-        position: relative;
-        z-index: 0;
-        box-shadow: 0 0 10px lime;
-        text-shadow: 0 0 5px green, 0 0 10px lime, 0 0 15px green;
-        transition: transform 0.3s ease, text-shadow 0.3s ease;
-        animation: glow 3s ease-in-out infinite alternate;
-      }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 120px;  /* slightly larger */
+  height: 120px; /* slightly larger */
+  text-align: center;
+  border: 2px solid #39ff14;
+  background-color: #0a0;
+  border-radius: 15px;
+  color: black; /* changed from neon green to black */
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  box-shadow: 0 0 15px #39ff14;
+  text-shadow: 0 0 5px #00ff00, 0 0 15px #39ff14, 0 0 25px #00ff00;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+  animation: glow 3s ease-in-out infinite alternate;
+}
 
       a::before {
         content: '';
@@ -56,7 +62,7 @@
         width: 100%;
         height: 100%;
         border-radius: 15px;
-        background-color: greenyellow;
+        background-color: #39ff14;
         opacity: 0.15;
         filter: blur(10px);
         z-index: -1;
@@ -64,7 +70,8 @@
       }
 
       a:hover {
-        transform: scale(1.125);
+        transform: scale(1.15);
+        box-shadow: 0 0 30px #39ff14, 0 0 50px #00ff00;
       }
 
       a:hover::before {
@@ -72,8 +79,8 @@
       }
 
       a img {
-        width: 75px;
-        height: 75px;
+        width: 90px;
+        height: 90px;
         object-fit: cover;
       }
 
@@ -82,30 +89,36 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
-        max-height: 25px;
+        max-height: 30px; /* slightly bigger */
       }
 
       @keyframes glow {
         0% {
-          text-shadow: 0 0 5px green, 0 0 10px lime, 0 0 15px green;
-          box-shadow: 0 0 10px lime;
+          text-shadow: 0 0 5px #00ff00, 0 0 15px #39ff14, 0 0 25px #00ff00;
+          box-shadow: 0 0 15px #39ff14;
         }
         100% {
-          text-shadow: 0 0 10px green, 0 0 20px lime, 0 0 30px green;
-          box-shadow: 0 0 20px lime;
+          text-shadow: 0 0 10px #00ff00, 0 0 25px #39ff14, 0 0 35px #00ff00;
+          box-shadow: 0 0 25px #39ff14;
         }
       }
     </style>
   </head>
   <body>
-    <h1>Our Games</h1>
-    <div class="container">
+    <h1>Welcome to Terminus Games</h1>
+    <h2>Blakeplayz19372x2.github.io is now TERMINUS GAMES! <br> All new website variations will be made under terminusgames.github.io <br> (e.g. terminusgames.github.io, terminusgamesx2.github.io, etc.)</h2>
+      <h2>Scratch Games</h2>
+      <div class="container">
       <span><a href="15.html">15%</a></span>
       <span><a href="appel.html">Appel</a></span>
       <span><a href="nitroracing.html">Nitro Racing</a></span>
       <span><a href="terminus.html">Terminus</a></span>
       <span><a href="towerdefense.html">Tower Defense</a></span>
       <span><a href="windows.html">Windows Emulator</a></span>
+      <span><a href="blobrpg.html">Blob RPG</a></span>
+      </div>
+      <h2>Classic Games</h2>
+      <div class="container">
       <span><a href="ragdollhit/index.html">Ragdoll Hit</a></span>
       <span><a href="ragdollarchers/index.html">Ragdoll Archers</a></span>
       <span><a href="ropepolice/index.html">Amazing Strange Rope Police</a></span>
@@ -114,16 +127,22 @@
       <span><a href="geometrydash/index.html">Geometry Dash</a></span>
       <span><a href="finalearth2/index.html">The Final Earth 2</a></span>
       <span><a href="bitlife/index.html">Bitlife</a></span>
-      <span><a href="neverendinglegacy/Game/index.html">Never Ending Legacy</a></span>
-      <span><a href="sandbox/sandbox.html">Experiment Sandbox</a></span>
       <span><a href="cellmachine/index.html">Cell Machine</a></span>
-      <span><a href="eaglercraft.html">Eaglercraft</a></span>
       <span><a href="slope/index.html">Slope</a></span>
       <span><a href="slope2/index.html">Slope 2</a></span>
-      <span><a href="blobrpg.html">Blob RPG</a></span>
-      <span><a href="scratchtohtml.html">Scratch Htmlifier</a></span>
       <span><a href="knight/index.html">Progress Knight</a></span>
       <span><a href="10todawn/index.html">10 Minutes till dawn (New!)</a></span>
-    </div>
+      </div>
+      <h2>HTML Games</h2>
+      <div class="container">
+      <span><a href="eaglercraft.html">Eaglercraft</a></span>
+      <span><a href="sandbox/sandbox.html">Experiment Sandbox</a></span>
+      <span><a href="neverendinglegacy/Game/index.html">Never Ending Legacy</a></span>
+      </div>
+      <h2>Other Stuff</h2>
+      <div class="container">
+      <span><a href="scratchtohtml.html">Scratch Htmlifier</a></span>
+      </div>
   </body>
 </html>
+
