@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: black;" onload="start()">
+
+<script>
+var c, ctx, img, out;
+
+function start() {
+  c = document.getElementById("canvas");
+  ctx = c.getContext("2d");
+  img = document.getElementById("img");
+  drawThing (9, 3, 0, 0 );
+  drawThing (6, 3, 1, 0 );
+  drawThing (8, 0, 2, 0 );
+  drawThing (5, 0, 3, 0 );
+  drawThing (10,3, 4, 0 );
+  drawThing (7, 3, 5, 0 );
+  drawThing (7, 0, 6, 0 );
+  drawThing (5, 1, 7, 0 );
+  drawThing (11,3, 8, 0 );
+  drawThing (8, 3, 9, 0 );
+  drawThing (6, 0, 10,0 );
+  drawThing (5, 2, 11,0 );
+  drawThing (12,0, 0, 1 );
+  drawThing (1, 4, 1, 1 );
+  drawThing (1, 3, 2, 1 );
+  drawThing (4, 0, 3, 1 );
+  drawThing (12,1, 4, 1 );
+  drawThing (3, 4, 5, 1 );
+  drawThing (3, 3, 6, 1 );
+  drawThing (4, 1, 7, 1 );
+  drawThing (12,2, 8, 1 );
+  drawThing (5, 4, 9, 1 );
+  drawThing (5, 3, 10,1 );
+  drawThing (4, 2, 11,1 );
+  drawThing (9, 0, 0, 2 );
+  drawThing (0, 4, 1, 2 );
+  drawThing (0, 3, 2, 2 );
+  drawThing (0, 0, 3, 2 );
+  drawThing (9, 1, 4, 2 );
+  drawThing (2, 4, 5, 2 );
+  drawThing (2, 3, 6, 2 );
+  drawThing (0, 2, 7, 2 );
+  drawThing (9, 2, 8, 2 );
+  drawThing (4, 4, 9, 2 );
+  drawThing (4, 3, 10,2 );
+  drawThing (0, 2, 11,2 );
+  drawThing (6, 4, 0, 3 );
+  drawThing (1, 2, 1, 3 );
+  drawThing (1, 0, 2, 3 );
+  drawThing (1, 1, 3, 3 );
+  drawThing (7, 4, 4, 3 );
+  drawThing (2, 2, 5, 3 );
+  drawThing (2, 0, 6, 3 );
+  drawThing (2, 1, 7, 3 );
+  drawThing (8, 4, 8, 3 );
+  drawThing (3, 2, 9, 3 );
+  drawThing (3, 0, 10,3 );
+  drawThing (3, 1, 11,3 );
+  drawThing (6, 1, 0, 4 );
+  drawThing (11,0, 1, 4 );
+  drawThing (6, 2, 2, 4 );
+  drawThing (10,0, 3, 4 );
+  drawThing (7, 1, 4, 4 );
+  drawThing (11,1, 5, 4 );
+  drawThing (7, 2, 6, 4 );
+  drawThing (10,1, 7, 4 );
+  drawThing (8, 1, 8, 4 );
+  drawThing (11,2, 9, 4 );
+  drawThing (8, 2, 10,4 );
+  drawThing (10,2, 11,4 );
+  drawThing (6, 8, 0, 5 );
+  drawThing (3, 13,1, 5 );
+  drawThing (6, 5, 2, 5 );
+  drawThing (0, 13,3, 5 );
+  drawThing (6, 9, 4, 5 );
+  drawThing (4, 13,5, 5 );
+  drawThing (6, 6, 6, 5 );
+  drawThing (1, 13,7, 5 );
+  drawThing (6, 10,8, 5 );
+  drawThing (5, 13,9, 5 );
+  drawThing (6, 7, 10,5 );
+  drawThing (2, 13,11,5 );
+  drawThing (7, 8, 1, 6 );
+  drawThing (7, 5, 2, 6 );
+  drawThing (6, 12,3, 6 );
+  drawThing (7, 9, 5, 6 );
+  drawThing (7, 6, 6, 6 );
+  drawThing (6, 13,7, 6 );
+  drawThing (7, 10,9, 6 );
+  drawThing (7, 7, 10,6 );
+  drawThing (6, 14,11,6 );
+  drawThing (3, 14,1, 7 );
+  drawThing (0, 14,2, 7 );
+  drawThing (9, 11,3, 7 );
+  drawThing (4, 14,5, 7 );
+  drawThing (1, 14,6, 7 );
+  drawThing (10,11,7, 7 );
+  drawThing (5, 14,9, 7 );
+  drawThing (2, 14,10,7 );
+  drawThing (11,11,11,7 );
+  drawThing (3, 11,1, 8 );
+  drawThing (13,0, 2, 8 );
+  drawThing (0, 11,3, 8 );
+  drawThing (4, 11,5, 8 );
+  drawThing (14,0, 6, 8 );
+  drawThing (1, 11,7, 8 );
+  drawThing (5, 11,9, 8 );
+  drawThing (15,0, 10,8 );
+  drawThing (2, 11,11,8 );
+  drawThing (5, 5, 1, 9 );
+  drawThing (13,3, 2, 9 );
+  drawThing (5, 8, 3, 9 );
+  drawThing (5, 6, 5, 9 );
+  drawThing (14,3, 6, 9 );
+  drawThing (5, 9, 7, 9 );
+  drawThing (5, 7, 9, 9 );
+  drawThing (15,3, 10,9 );
+  drawThing (5, 10,11,9 );
+  drawThing (0, 12,1, 10);
+  drawThing (13,1, 2, 10);
+  drawThing (3, 12,3, 10);
+  drawThing (1, 12,5, 10);
+  drawThing (14,1, 6, 10);
+  drawThing (4, 12,7, 10);
+  drawThing (2, 12,9, 10);
+  drawThing (15,1, 10,10);
+  drawThing (5, 12,11,10);
+  drawThing (4, 8, 1, 11);
+  drawThing (13,2, 2, 11);
+  drawThing (4, 5, 3, 11);
+  drawThing (4, 9, 5, 11);
+  drawThing (14,2, 6, 11);
+  drawThing (4, 6, 7, 11);
+  drawThing (4, 10,9, 11);
+  drawThing (15,2, 10,11);
+  drawThing (4, 7, 11,11);
+  
+  //blank
+  
+  drawThing (8, 6, 0, 6 ); //up
+  
+  drawThing (8, 7, 0, 7 ); //right
+  drawThing (3, 5, 0, 8 ); //up, right
+  
+  drawThing (8, 5, 0, 9 ); //down
+  drawThing (8, 10,0, 10); //up, down
+  drawThing (3, 6, 0, 11); //right, down
+  drawThing (12,8, 0, 12); //up, right, down
+  
+  drawThing (9, 7, 0, 13); //left
+  drawThing (2, 5, 0, 14); //up, left
+  drawThing (10,7, 0, 15); //right, left
+  drawThing (11,5, 0, 16); //up, right, left
+  drawThing (2, 6, 0, 17); //down, left
+  drawThing (12,5, 0, 18); //up, down, left
+  drawThing (11,8, 0, 19); //right, down, left
+  drawThing (6, 11,0, 20); //up, right, down, left
+  
+  //blank
+  
+  drawThing (9, 6, 4, 6 ); //up
+  
+  drawThing (8, 8, 4, 7 ); //right
+  drawThing (3, 7, 4, 8 ); //up, right
+  
+  drawThing (9, 5, 4, 9 ); //down
+  drawThing (9, 10,4, 10); //up, down
+  drawThing (3, 8, 4, 11); //right, down
+  drawThing (12,9, 4, 12); //up, right, down
+  
+  drawThing (9, 8, 4, 13); //left
+  drawThing (2, 7, 4, 14); //up, left
+  drawThing (10,8, 4, 15); //right, left
+  drawThing (11,6, 4, 16); //up, right, left
+  drawThing (2, 8, 4, 17); //down, left
+  drawThing (12,6, 4, 18); //up, down, left
+  drawThing (11,9, 4, 19); //right, down, left
+  drawThing (7, 11,4, 20); //up, right, down, left
+  
+  //blank
+  
+  drawThing (10,6, 8, 6 ); //up
+  
+  drawThing (8, 9, 8, 7 ); //right
+  drawThing (3, 9, 8, 8 ); //up, right
+  
+  drawThing (10,5, 8, 9 ); //down
+  drawThing (10,10,8, 10); //up, down
+  drawThing (3, 10,8, 11); //right, down
+  drawThing (12,10,8, 12); //up, right, down
+  
+  drawThing (9, 9, 8, 13); //left
+  drawThing (2, 9, 8, 14); //up, left
+  drawThing (10,9, 8, 15); //right, left
+  drawThing (11,7, 8, 16); //up, right, left
+  drawThing (2, 10,8, 17); //down, left
+  drawThing (12,7, 8, 18); //up, down, left
+  drawThing (11,10,8, 19); //right, down, left
+  drawThing (8, 11,8, 20); //up, right, down, left
+  
+  drawThing (0, 6, 1, 12);
+  drawThing (0, 5, 1, 13);
+  drawThing (1, 5, 1, 14);
+  drawThing (1, 6, 1, 15);
+  
+  drawThing (0, 8, 5, 12);
+  drawThing (0, 7, 5, 13);
+  drawThing (1, 7, 5, 14);
+  drawThing (1, 8, 5, 15);
+  
+  drawThing (0, 10,9, 12);
+  drawThing (0, 9, 9, 13);
+  drawThing (1, 9, 9, 14);
+  drawThing (1, 10,9, 15);
+}
+
+function drawThing (srcx, srcy, x, y) {
+  ctx.drawImage (img, srcx * 18, srcy * 18, 16, 16, x * 18, y * 18, 16, 16);
+}
+</script>
+
+<img id="img" src="./images/Tiles_0.png">
+<canvas id="canvas" width="216" height="400"></canvas>
+
+</body>
+</html>

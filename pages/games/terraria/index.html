@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon"
+      type="image/png"
+      href="./images/icon.png">
+
+<style>
+canvas {
+    border: 1px solid #d3d3d3;
+    background-color: transparent;
+}
+#mydiv {
+    cursor: none;
+}
+</style>
+<title>HTMLerriaRedone</title>
+</head>
+<body style="background-color:black;" onload="startGame()">
+<div id="mydiv" oncontextmenu="return false" onmouseup="mouseButton(null)" onmousedown="mouseButton(event)" onmousemove="mousePos(event)" style="position: relative;width: 1349px;height: 745px;cusor: none">
+ <canvas id="canvasBack" width="1349" height="745"
+   style="position: absolute; left: 0; top: 0; z-index: 0;border: 0px;"></canvas>
+ <canvas id="blockCanvas" width="1349" height="745"
+   style="position: absolute; left: 0; top: 0; z-index: 1;border: 0px;"></canvas>
+ <canvas id="playerCanvas" width="1349" height="745"
+   style="position: absolute; left: 0; top: 0; z-index: 2;border: 0px;"></canvas>
+</div>
+<canvas hidden id="blockStaging11" width="8400" height="4800"></canvas>
+<canvas hidden id="blockStaging12" width="8400" height="4800"></canvas>
+<canvas hidden id="blockStaging21" width="8400" height="4800"></canvas>
+<canvas hidden id="blockStaging22" width="8400" height="4800"></canvas>
+<p style="color: white;" id="thingy"></p>
+<script src="./playredone.js"></script>
+<script src="./blockDefine.js"></script>
+</body>
+</html>
