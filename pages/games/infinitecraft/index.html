@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+
+    <title>Infinite Craft</title>
+    <script src="../../storage/js/cloak.js"></script>
+    <link href="../../images/ico.ico" rel="shortcut icon" type="image/x-icon">
+
+
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <script defer="" src="index.js"></script>
+    <script defer="" src="scripts/MergeEngine.js"></script>
+    <script defer="" src="scripts/DataLoader.js"></script>
+    <script defer="" src="scripts/Searcher.js"></script>
+    <script defer="" src="scripts/Completionist.js"></script>
+</head>
+<body>
+<div id="game-container">
+    <div id="game-icon">InfiniteCraft</div>
+    <div id="canvas"></div>
+    <div id="sidebar">
+        <div class="element" id="water">💧 Water</div>
+        <div class="element" id="fire">🔥 Fire</div>
+        <div class="element" id="earth">🌍 Earth</div>
+        <div class="element" id="air">💨 Air</div>
+        <div id="search-container">
+            <input id="search-bar" placeholder="Search..." type="text"/>
+        </div>
+    </div>
+    <div id="clean-button">Clean</div>
+</div>
+
+<div class="unsupported-container">
+    <div class="unsupported-text">
+        This Screen Size is unsupported!<br/><br/>
+    </div>
+</div>
+</body>
+</html>
