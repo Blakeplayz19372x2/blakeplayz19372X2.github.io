@@ -12,14 +12,14 @@
 
       h1 {
         text-align: center;
-        color: #00ff00;
+        color: #00e1ff;
         margin-top: 25px;
-        text-shadow: 0 0 5px #00ff00, 0 0 15px #39ff14, 0 0 25px #00ff00;
+        text-shadow: 0 0 5px #00e1ff, 0 0 15px #39f3ff, 0 0 25px #00e1ff;
         animation: glow 3s ease-in-out infinite alternate;
       }
       h2 {
         text-align: center;
-        color: #00ff00;
+        color: #00e1ff;
         margin-top: 5px;
         animation: glow 3s ease-in-out infinite alternate;
       }
@@ -34,27 +34,27 @@
       }
 
       a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 120px;  /* slightly larger */
-  height: 120px; /* slightly larger */
-  text-align: center;
-  border: 2px solid #39ff14;
-  background-color: #0a0;
-  border-radius: 15px;
-  color: black; /* changed from neon green to black */
-  font-size: 1.2rem;
-  box-sizing: border-box;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-  box-shadow: 0 0 15px #39ff14;
-  text-shadow: 0 0 5px #00ff00, 0 0 15px #39ff14, 0 0 25px #00ff00;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
-  animation: glow 3s ease-in-out infinite alternate;
-}
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 120px;  /* slightly larger */
+        height: 120px; /* slightly larger */
+        text-align: center;
+        border: 2px solid #39f3ff;
+        background-color: #0a0;
+        border-radius: 15px;
+        color: black; /* changed from neon green to black */
+        font-size: 1.2rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+        box-shadow: 0 0 15px #39f3ff;
+        text-shadow: 0 0 5px #00e1ff, 0 0 15px #39f3ff, 0 0 25px #00e1ff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+        animation: glow 3s ease-in-out infinite alternate;
+      }
 
       a::before {
         content: '';
@@ -62,7 +62,7 @@
         width: 100%;
         height: 100%;
         border-radius: 15px;
-        background-color: #39ff14;
+        background-color: #39f3ff;
         opacity: 0.15;
         filter: blur(10px);
         z-index: -1;
@@ -71,9 +71,8 @@
 
       a:hover {
         transform: scale(1.15);
-        box-shadow: 0 0 40px #39ff14, 0 0 60px #00ff00;
+        box-shadow: 0 0 40px #39f3ff, 0 0 60px #00e1ff;
       }
-
 
       a:hover::before {
         opacity: 0.35;
@@ -95,12 +94,12 @@
 
       @keyframes glow {
         0% {
-          text-shadow: 0 0 5px #00ff00, 0 0 15px #39ff14, 0 0 25px #00ff00;
-          box-shadow: 0 0 15px #39ff14;
+          text-shadow: 0 0 5px #00e1ff, 0 0 15px #39f3ff, 0 0 25px #00e1ff;
+          box-shadow: 0 0 15px #39f3ff;
         }
         100% {
-          text-shadow: 0 0 10px #00ff00, 0 0 25px #39ff14, 0 0 35px #00ff00;
-          box-shadow: 0 0 25px #39ff14;
+          text-shadow: 0 0 10px #00e1ff, 0 0 25px #39f3ff, 0 0 35px #00e1ff;
+          box-shadow: 0 0 25px #39f3ff;
         }
       }
     </style>
