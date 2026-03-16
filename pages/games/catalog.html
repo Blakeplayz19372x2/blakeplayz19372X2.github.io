@@ -1,161 +1,210 @@
 <html>
-  <head>
-    <title>Terminus Games - Our Games</title>
-    <style>
-      body {
-        background-color: #111; /* dark background for neon */
-        font-family: monospace;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<head>
+<title>Terminus Games - Our Games</title>
 
-      h1 {
-        text-align: center;
-        color: #00e1ff;
-        margin-top: 25px;
-        text-shadow: 0 0 5px #00e1ff, 0 0 15px #39f3ff, 0 0 25px #00e1ff;
-        animation: glow 3s ease-in-out infinite alternate;
-      }
-      h2 {
-        text-align: center;
-        color: #00e1ff;
-        margin-top: 5px;
-        animation: glow 3s ease-in-out infinite alternate;
-      }
+<style>
 
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin-top: 50px;
-        padding: 0 10px;
-      }
+:root {
+  --neon: #39f3ff;
+  --neon-soft: #00e1ff;
+  --bg-dark: #111;
+  --bg-darker: #0a0a0a;
+}
 
-      a {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 120px;  /* slightly larger */
-        height: 120px; /* slightly larger */
-        text-align: center;
-        border: 2px solid #39f3ff;
-        background-color: #111;
-        border-radius: 15px;
-        color: black; /* changed from neon green to black */
-        font-size: 1.2rem;
-        box-sizing: border-box;
-        overflow: hidden;
-        position: relative;
-        z-index: 0;
-        box-shadow: 0 0 15px #39f3ff;
-        text-shadow: 0 0 5px #00e1ff, 0 0 15px #39f3ff, 0 0 25px #00e1ff;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
-        animation: glow 3s ease-in-out infinite alternate;
-      }
+@font-face {
+  font-family: 'GoogleSans';
+  src: url('/catalog-assets/googlesans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-      a::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        background-color: #39f3ff;
-        opacity: 0.15;
-        filter: blur(10px);
-        z-index: -1;
-        transition: opacity 0.3s;
-      }
+body {
+  background-color: var(--bg-dark);
+  font-family: 'GoogleSans', monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--neon-soft);
+}
 
-      a:hover {
-        transform: scale(1.15);
-        box-shadow: 0 0 40px #39f3ff, 0 0 60px #00e1ff;
-      }
+/* ===== LAYOUT ===== */
 
-      a:hover::before {
-        opacity: 0.35;
-      }
+.page {
+  display: flex;
+  min-height: 100vh;
+}
 
-      a img {
-        width: 90px;
-        height: 90px;
-        object-fit: cover;
-      }
+/* SIDEBAR */
 
-      a span {
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: normal;
-        max-height: 30px; /* slightly bigger */
-      }
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100vh;
+  background: var(--bg-darker);
+  border-right: 2px solid var(--neon);
+  box-shadow: 0 0 20px var(--neon);
+  padding-top: 20px;
+  overflow-y: auto;
+}
 
-      @keyframes glow {
-        0% {
-          text-shadow: 0 0 5px #00e1ff, 0 0 7.5px #39f3ff, 0 0 10px #00e1ff;
-          box-shadow: 0 0 5px #39f3ff;
-        }
-        100% {
-          text-shadow: 0 0 5px #00e1ff, 0 0 10px #39f3ff, 0 0 12.5px #00e1ff;
-          box-shadow: 0 0 15px #39f3ff;
-        }
-      }
-    </style>
-    <script src="../../scripts/analytics.js"></script>
-  </head>
-  <body>
-    <h1>Welcome to Terminus Games</h1>
-      <h2>Scratch Games</h2>
-      <div class="container">
-      <span><a href="15.html">15%</a></span>
-      <span><a href="appel.html">Appel</a></span>
-      <span><a href="nitroracing.html">Nitro Racing</a></span>
-      <span><a href="terminus.html">Terminus</a></span>
-      <span><a href="towerdefense.html">Tower Defense</a></span>
-      <span><a href="windows.html">Windows Emulator</a></span>
-      <span><a href="blobrpg.html">Blob RPG</a></span>
-      <span><a href="vectoidtds.html">Vectoids TDS</a></span>
-      </div>
-      <h2>Classic Games</h2>
-      <div class="container">
-      <span><a href="ragdollhit/index.html">Ragdoll Hit</a></span>
-      <span><a href="ragdollarchers/index.html">Ragdoll Archers</a></span>
-      <span><a href="ropepolice/index.html">Amazing Strange Rope Police</a></span>
-      <span><a href="yohohoio/index.html">Yohoho.io</a></span>
-      <span><a href="retrobowl/index.html">Retro Bowl</a></span>
-      <span><a href="geometrydash/index.html">Geometry Dash</a></span>
-      <span><a href="finalearth2/index.html">The Final Earth 2 (Updated!)</a></span>
-      <span><a href="bitlife/index.html">Bitlife</a></span>
-      <span><a href="cellmachine/index.html">Cell Machine</a></span>
-      <span><a href="slope/index.html">Slope</a></span>
-      <span><a href="slope2/index.html">Slope 2</a></span>
-      <span><a href="knight/index.html">Progress Knight</a></span>
-      <span><a href="10todawn/index.html">10 Minutes till dawn</a></span>
-      <span><a href="polytrack/index.html">Polytrack</a></span>
-      <span><a href="ovo/index.html">Ovo</a></span>
-      <span><a href="getawayshootout/index.html">Getaway Shootout </a></span>
-      <span><a href="hollowknight.html">Hollow Knight</a></span>
-      <span><a href="brainrot.html">Steal A Brainrot</a></span>
-      <span><a href="cataclysm/index.html">Cataclysm</a></span>
-      <span><a href="ngon/index.html">N-gon</a></span>
-      <span><a href="sandboxels/index.html">Sandboxels (New!)</a></span>
-      </div>
-      <h2>HTML Games</h2>
-      <div class="container">
-      <span><a href="sandbox/sandbox.html">Experiment Sandbox</a></span>
-      <span><a href="neverendinglegacy/Game/index.html">Never Ending Legacy</a></span>
-      <span><a href="terraria.html">Terraria</a></span>
-      <span><a href="cookieclicker/index.html">Cookie Clicker</a></span>
-      <span><a href="infinitecraft/index.html">Infinite Craft</a></span>
-      <span><a href="eaglerastra/index.html">Eaglercraft (Now uses Astra Client 1.8!)</a></span>
-      </div>
-      <h2>Other Stuff</h2>
-      <div class="container">
-      <span><a href="utilities/scratchtohtml.html">Scratch Htmlifier</a></span>
-      <span><a href="utilities/overload.html">History Spammer (idk if it works)</a></span>
-      </div>
-  </body>
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
+  margin: 8px 10px;
+  text-decoration: none;
+  color: var(--neon-soft);
+  border: 1px solid var(--neon);
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.25s;
+}
+
+.sidebar a:hover {
+  background: var(--neon);
+  color: black;
+  box-shadow: 0 0 15px var(--neon);
+}
+
+/* MAIN CONTENT AREA */
+
+.main {
+  margin-left: 220px;   /* same width as sidebar */
+  height: 100vh;
+  overflow-y: auto;     /* THIS is what scrolls */
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  text-shadow: 0 0 5px var(--neon-soft), 0 0 15px var(--neon);
+}
+h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* GAME GRID */
+
+.container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  border: 2px solid var(--neon);
+  border-radius: 15px;
+  text-decoration: none;
+  color: var(--neon-soft);
+  box-shadow: 0 0 15px var(--neon);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.container a:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 40px var(--neon);
+}
+
+.container a:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 40px #39f3ff;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon);
+  box-shadow: 0 0 10px var(--neon);
+  border-radius: 10px;
+}
+
+</style>
+
+<script src="../../scripts/analytics.js"></script>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Terminus</h2>
+
+<a href="">Games</a>
+<a href="../changelog.html">Changelog</a>
+<a href="#">Settings</a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<h1>Welcome to Terminus Games</h1>
+
+<h2>Scratch Games</h2>
+<div class="container">
+<a href="15.html">15%</a>
+<a href="appel.html">Appel</a>
+<a href="nitroracing.html">Nitro Racing</a>
+<a href="terminus.html">Terminus</a>
+<a href="towerdefense.html">Tower Defense</a>
+<a href="windows.html">Windows Emulator</a>
+<a href="blobrpg.html">Blob RPG</a>
+<a href="vectoidtds.html">Vectoids TDS</a>
+</div>
+
+<h2>Classic Games</h2>
+<div class="container">
+<a href="ragdollhit/index.html">Ragdoll Hit</a>
+<a href="ragdollarchers/index.html">Ragdoll Archers</a>
+<a href="ropepolice/index.html">Amazing Strange Rope Police</a>
+<a href="yohohoio/index.html">Yohoho.io</a>
+<a href="retrobowl/index.html">Retro Bowl</a>
+<a href="geometrydash/index.html">Geometry Dash</a>
+<a href="finalearth2/index.html">The Final Earth 2</a>
+<a href="bitlife/index.html">Bitlife</a>
+<a href="cellmachine/index.html">Cell Machine</a>
+<a href="slope/index.html">Slope</a>
+<a href="slope2/index.html">Slope 2</a>
+<a href="knight/index.html">Progress Knight</a>
+<a href="10todawn/index.html">10 Minutes till dawn</a>
+<a href="polytrack/index.html">Polytrack</a>
+<a href="ovo/index.html">Ovo</a>
+<a href="getawayshootout/index.html">Getaway Shootout</a>
+<a href="hollowknight.html">Hollow Knight</a>
+<a href="brainrot.html">Steal A Brainrot</a>
+<a href="cataclysm/index.html">Cataclysm</a>
+<a href="ngon/index.html">N-gon</a>
+<a href="sandboxels/index.html">Sandboxels</a>
+</div>
+
+<h2>HTML Games</h2>
+<div class="container">
+<a href="sandbox/sandbox.html">Experiment Sandbox</a>
+<a href="neverendinglegacy/Game/index.html">Never Ending Legacy</a>
+<a href="terraria.html">Terraria</a>
+<a href="cookieclicker/index.html">Cookie Clicker</a>
+<a href="infinitecraft/index.html">Infinite Craft</a>
+<a href="eaglerastra/index.html">Eaglercraft</a>
+</div>
+
+<h2>Utilities</h2>
+<div class="container">
+<a href="utilities/scratchtohtml.html">Scratch Compiler</a>
+</div>
+
+</body>
 </html>
-

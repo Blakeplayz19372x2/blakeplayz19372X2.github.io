@@ -71,7 +71,7 @@
         }
     ],
     "initialMaterials": {
-        "food": 100,
+        "food": 1000,
         "stone": 20,
         "wood": 20,
         "knowledge": 10,

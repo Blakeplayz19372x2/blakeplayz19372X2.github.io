@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>Terminus Games - Changelog</title>
+
+<style>
+
+@font-face {
+  font-family: 'GoogleSans';
+  src: url('/games/catalog-assets/googlesans.ttf') format('truetype');
+}
+
+:root {
+  --neon: #39f3ff;
+  --neon-soft: #00e1ff;
+  --bg: #111;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'GoogleSans', sans-serif;
+  margin: 0;
+  padding: 40px;
+  color: var(--neon-soft);
+  text-align: center;
+}
+
+/* TITLE */
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 60px;
+  text-shadow:
+    0 0 5px var(--neon-soft),
+    0 0 15px var(--neon),
+    0 0 30px var(--neon);
+}
+
+/* TIMELINE */
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding-left: 40px;
+}
+
+/* Vertical glowing line */
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--neon);
+  box-shadow: 0 0 10px var(--neon);
+}
+
+/* ENTRY */
+
+.entry {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+/* Timeline node */
+
+.entry::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  background: var(--neon);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon);
+}
+
+/* VERSION TITLE */
+
+.entry h2 {
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px var(--neon);
+}
+
+/* TEXT */
+
+.entry p {
+  line-height: 1.6;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon);
+  box-shadow: 0 0 10px var(--neon);
+  border-radius: 10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Terminus Changelog</h1>
+
+<div class="timeline">
+<!-- Timeline start -->
+<!-- Put the most recent updates up here-->
+
+
+
+<div class="entry">
+<h2>Version 1.0.0 - March 16, 2026</h2>
+<p>
+MASSIVE site styling update<br>
+Implemented Google Sans font.<br>
+Polished catalog page. <br>
+Added changelog page (Only changes after this point will be logged, unfortunately.) <br>
+THANK YOU SO MUCH FOR USING TERMINUS GAMES! I hope you enjoy the new design and the new games coming soon!
+</p>
+</div>
+<!-- Timeline end -->
+</div>
+
+</body>
+</html>
